@@ -1,10 +1,23 @@
-from django.urls import path
-from . import views
+"""
+URL configuration for Lab42 project.
+
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/5.0/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.urls import include, path
+    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+"""
+from django.contrib import admin
+from django.urls import path , include
+
 urlpatterns = [
-    path('', views.index, name="name1"),
-    path('<int:price>', views.calculate_total, name="name2"),
-    path('taxRate', views.index4, name="name3"),
-    #path('<str:name>', views.greet, name="name5"),
-    #path('<str:name>', views.flexable, name="Azzam"),
-    # Add more URL patterns here
+    path('admin/', admin.site.urls),
+    path('url1/', include('Lab424.urls')),
 ]
